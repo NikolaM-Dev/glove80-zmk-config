@@ -7,7 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
+/* #include <dt-bindings/zmk/ext_power.h> */
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -17,16 +17,6 @@
 
 / {
   behaviors {
-    // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
-    // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
-    /* layer_td: tap_dance_0 { */
-      /*   compatible = "zmk,behavior-tap-dance"; */
-      /*   label = "LAYER_TAP_DANCE"; */
-      /*   #binding-cells = <0>; */
-      /*   tapping-term-ms = <200>; */
-      /*   bindings = <&mo LOWER>, <&to LOWER>; */
-    /* }; */
-
     magic: magic_hold_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "MAGIC_HOLD_TAP";
@@ -43,34 +33,6 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&rgb_ug RGB_STATUS>;
-    };
-
-    bt_0: bt_profile_macro_0 {
-      label = "BT_0";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&out OUT_BLE>, <&bt BT_SEL 0>;
-    };
-
-    bt_1: bt_profile_macro_1 {
-      label = "BT_1";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&out OUT_BLE>, <&bt BT_SEL 1>;
-    };
-
-    bt_2: bt_profile_macro_2 {
-      label = "BT_2";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&out OUT_BLE>, <&bt BT_SEL 2>;
-    };
-
-    bt_3: bt_profile_macro_3 {
-      label = "BT_3";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&out OUT_BLE>, <&bt BT_SEL 3>;
     };
   };
 
@@ -91,39 +53,39 @@
 //    ├────────────────────────┼─────┼─────┼─────┼─────┼───┼──────┬──────┬──────┐   ┌─────────────┬─────┬─────┼───┼─────┼─────┼─────┼─────┼────────────────────────┤
 //    │          lsft          │  Z  │  X  │  C  │  V  │ B │ esc  │ lctl │ pgup │   │ K_SCROLL_up │ ins │ ent │ N │  M  │  ,  │  .  │  /  │          rsft          │
 //    ├────────────────────────┼─────┼─────┼─────┼─────┼───┼──────┼──────┼──────┤   ├─────────────┼─────┼─────┼───┼─────┼─────┼─────┼─────┼────────────────────────┤
-//    │ &magic laltYER_MAGIC 0 │  \  │  (  │  )  │  `  │   │ bspc │ del  │ pgdn │   │ K_SCROLL_up │ tab │ spc │   │     │     │  [  │  ]  │ &magic laltYER_MAGIC 0 │
+//    │ &magic laltYER_MAGIC 0 │  \  │  (  │  )  │  `  │   │ bspc │ del  │ pgdn │   │ K_SCROLL_up │ tab │ spc │   │     │  [  │  ]  │     │ &magic laltYER_MAGIC 0 │
 //    └────────────────────────┴─────┴─────┴─────┴─────┘   └──────┴──────┴──────┘   └─────────────┴─────┴─────┘   └─────┴─────┴─────┴─────┴────────────────────────┘
   &none                  &none      &none      &none      &none                                                                                                           &none    &none       &none      &none      &none
   &none                  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5                                                                                     &kp N6   &kp N7   &kp N8      &kp N9     &kp N0     &none
   &none                  &kp Q      &kp W      &kp E      &kp R       &kp T                                                                                      &kp Y    &kp U    &kp I       &kp O      &kp P      &kp MINUS
   &kp EQUAL              &kp A      &kp S      &kp D      &kp F       &kp G                                                                                      &kp H    &kp J    &kp K       &kp L      &kp SEMI   &kp SQT
   &kp LSHFT              &kp Z      &kp X      &kp C      &kp V       &kp B    &kp ESC    &kp LCTRL   &kp PG_UP       &kp K_SCROLL_UP   &kp INSERT   &kp RET     &kp N    &kp M    &kp COMMA   &kp DOT    &kp FSLH   &kp RSHFT
-  &magic LAYER_MAGIC 0   &kp BSLH   &kp LPAR   &kp RPAR   &kp GRAVE            &kp BSPC   &kp DEL     &kp PG_DN       &kp K_SCROLL_UP   &kp TAB      &kp SPACE            &none    &none       &kp LBKT   &kp RBKT   &magic LAYER_MAGIC 0
+  &magic LAYER_MAGIC 0   &kp BSLH   &kp LPAR   &kp RPAR   &kp GRAVE            &kp BSPC   &kp DEL     &kp PG_DN       &kp K_SCROLL_UP   &kp TAB      &kp SPACE            &none    &kp LBKT    &kp RBKT   &none      &magic LAYER_MAGIC 0
       >;
     };
 
     layer_magic {// Layer 1
       display-name = "Magic";
       bindings = <
-//    ┌────────────┬─────────┬─────────┬─────────┬─────────┐                                                                ┌─────┬─────┬─────┬─────┬────────────┐
-//    │   bt_clr   │         │         │         │         │                                                                │     │     │     │     │ bt_clr_ALL │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                                ┌─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │         │         │         │         │         │                                                │     │     │     │     │     │            │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │ ug_ sp+ │ ug_ sa+ │ ug_ hu+ │ ug_ br+ │ ug_ tog │                                                │     │     │     │     │     │            │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │    boot    │ ug_ sp- │ ug_ sa- │ ug_ hu- │ ug_ br- │ ug_ eff │                                                │     │     │     │     │     │    boot    │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┬───────┬──────────┐   ┌─────┬─────┬─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │ &sys_reset │         │         │         │         │         │ &bt_2 │ &bt_3 │          │   │     │     │     │     │     │     │     │     │ &sys_reset │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┼───────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │         │         │         │         │         │ &bt_0 │ &bt_1 │ out_ usb │   │     │     │     │     │     │     │     │     │            │
-//    └────────────┴─────────┴─────────┴─────────┴─────────┘         └───────┴───────┴──────────┘   └─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴────────────┘
-  &bt BT_CLR    &none             &none             &none             &none                                                                                                  &none   &none   &none   &none   &bt BT_CLR_ALL
-  &none         &none             &none             &none             &none             &none                                                                        &none   &none   &none   &none   &none   &none
-  &none         &rgb_ug RGB_SPI   &rgb_ug RGB_SAI   &rgb_ug RGB_HUI   &rgb_ug RGB_BRI   &rgb_ug RGB_TOG                                                              &none   &none   &none   &none   &none   &none
-  &bootloader   &rgb_ug RGB_SPD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF                                                              &none   &none   &none   &none   &none   &bootloader
-  &sys_reset    &none             &none             &none             &none             &none             &bt_2   &bt_3   &none              &none   &none   &none   &none   &none   &none   &none   &none   &sys_reset
-  &none         &none             &none             &none             &none                               &bt_0   &bt_1   &out OUT_USB       &none   &none   &none           &none   &none   &none   &none   &none
+//    ┌────────────┬─────┬─────┬─────┬─────┐                                                   ┌─────┬─────┬─────┬─────┬────────────┐
+//    │            │     │     │     │     │                                                   │     │     │     │     │            │
+//    ├────────────┼─────┼─────┼─────┼─────┼─────┐                                       ┌─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │     │     │     │     │     │                                       │     │     │     │     │     │            │
+//    ├────────────┼─────┼─────┼─────┼─────┼─────┤                                       ├─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │     │     │     │     │     │                                       │     │     │     │     │     │            │
+//    ├────────────┼─────┼─────┼─────┼─────┼─────┤                                       ├─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │    boot    │     │     │     │     │     │                                       │     │     │     │     │     │    boot    │
+//    ├────────────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┬─────┐   ┌─────┬─────┬─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │ &sys_reset │     │     │     │     │     │     │     │     │   │     │     │     │     │     │     │     │     │ &sys_reset │
+//    ├────────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │     │     │     │     │     │     │     │     │   │     │     │     │     │     │     │     │     │            │
+//    └────────────┴─────┴─────┴─────┴─────┘     └─────┴─────┴─────┘   └─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴────────────┘
+  &none         &none   &none   &none   &none                                                                       &none   &none   &none   &none   &none
+  &none         &none   &none   &none   &none   &none                                                       &none   &none   &none   &none   &none   &none
+  &none         &none   &none   &none   &none   &none                                                       &none   &none   &none   &none   &none   &none
+  &bootloader   &none   &none   &none   &none   &none                                                       &none   &none   &none   &none   &none   &bootloader
+  &sys_reset    &none   &none   &none   &none   &none   &none   &none   &none       &none   &none   &none   &none   &none   &none   &none   &none   &sys_reset
+  &none         &none   &none   &none   &none           &none   &none   &none       &none   &none   &none           &none   &none   &none   &none   &none
       >;
     };
   };
