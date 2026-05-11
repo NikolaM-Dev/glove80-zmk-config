@@ -21,13 +21,22 @@
 #define LAYER_MOUSE     5
 #define LAYER_MAGIC     6
 
-// Home row mod tapping terms matching sunaku.keymap DIFFICULTY_LEVEL 0
-// TAPPING_RESOLUTION = 150, then: index=180, middle=210, ring=240, pinky=270
+// prevent consecutive quick taps from being interpreted as holds
+#define HOME_QUICK_TAP_MS 300
+
+// TAPPING_RESOLUTION specifies the maximum speed (ms) at which the keyboard confuses
+// your taps as being holds when typing on home row mod keys. Lower = faster detection.
 #define TAPPING_RESOLUTION 150
-#define HOME_INDEX_TERM    180
-#define HOME_MIDDY_TERM    210
-#define HOME_RINGY_TERM    240
-#define HOME_PINKY_TERM    270
+
+// index finger: shortest reach, needs least time (TAPPING_RESOLUTION + 30ms)
+#define HOME_INDEX_TERM (TAPPING_RESOLUTION + 30)
+// middle finger: medium reach (TAPPING_RESOLUTION + 60ms)
+#define HOME_MIDDY_TERM (TAPPING_RESOLUTION + 60)
+// ring finger: longer reach (TAPPING_RESOLUTION + 90ms)
+#define HOME_RINGY_TERM (TAPPING_RESOLUTION + 90)
+// pinky finger: longest reach, needs most time (TAPPING_RESOLUTION + 120ms)
+#define HOME_PINKY_TERM (TAPPING_RESOLUTION + 120)
+
 
 / {
   behaviors {
@@ -37,6 +46,9 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <HOME_PINKY_TERM>;
+      hold-while-undecided;
+      retro-tap;
+      quick-tap-ms = <HOME_QUICK_TAP_MS>;
       bindings = <&kp>, <&kp>;
     };
     hmr: home_mod_ring {
@@ -44,6 +56,9 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <HOME_RINGY_TERM>;
+      hold-while-undecided;
+      retro-tap;
+      quick-tap-ms = <HOME_QUICK_TAP_MS>;
       bindings = <&kp>, <&kp>;
     };
     hmm: home_mod_middy {
@@ -51,6 +66,9 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <HOME_MIDDY_TERM>;
+      hold-while-undecided;
+      retro-tap;
+      quick-tap-ms = <HOME_QUICK_TAP_MS>;
       bindings = <&kp>, <&kp>;
     };
     hmi: home_mod_index {
@@ -58,6 +76,9 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <HOME_INDEX_TERM>;
+      hold-while-undecided;
+      retro-tap;
+      quick-tap-ms = <HOME_QUICK_TAP_MS>;
       bindings = <&kp>, <&kp>;
     };
 
