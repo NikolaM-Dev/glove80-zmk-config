@@ -6,7 +6,8 @@
 
 - [ ] Add key repetition.
 - [ ] Improve the layouts adding the custom behavior.
-  - [ ] Add copy and paste support
+  - [x] Add copy and paste support ✅ 2026-05-11
+  - [x] Add support for smart caps words ✅ 2026-05-11
 
 ## 🟠 P2
 
