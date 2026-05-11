@@ -13,12 +13,15 @@
 - [ ] Add key repetition.
 
 ## 🟠 P2
+
 - [ ] Add a GitHub workflow for generate the keyboard layouts documentation.
+- [ ] Add links to the Sunaku work
 
 ## 🟡 P3
 
 - [ ] Learn how to use the RGB stuff.
 - [ ] Improve the Magic layer.
+
 ---
 
 ## 🗃️ Archive
