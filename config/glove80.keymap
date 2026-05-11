@@ -12,8 +12,14 @@
 #include <dt-bindings/zmk/rgb.h>
 
 // layers
-#define LAYER_QWERTY  0
-#define LAYER_MAGIC 1
+#define LAYER_QWERTY   0
+#define LAYER_FUNCTION 1
+#define LAYER_CURSOR   2
+#define LAYER_NUMBERS  3
+#define LAYER_SYMBOLS  4
+#define LAYER_MOUSE    5
+#define LAYER_MAGIC    6
+
 // Home row mod tapping terms matching sunaku.keymap DIFFICULTY_LEVEL 0
 // TAPPING_RESOLUTION = 150, then: index=180, middle=210, ring=240, pinky=270
 #define HOME_INDEX_TERM 180
