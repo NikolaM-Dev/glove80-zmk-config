@@ -5,12 +5,13 @@
 ## 🔴 P1
 
 - [ ] Add important layouts.
-  - [ ] Symbols
-  - [ ] Functions
+  - [x] Symbols ✅ 2026-05-10
+  - [x] Functions ✅ 2026-05-10
   - [ ] Numbers
   - [ ] Cursor
   - [ ] Mouse
 - [ ] Add key repetition.
+- [ ] Improve the layouts adding the custom behavior.
 
 ## 🟠 P2
 
