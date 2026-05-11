@@ -201,6 +201,30 @@
       >;
     };
 
+    layer_cursor {// Layer 2
+      display-name = "Cursor";
+      bindings = <
+//    ┌──────────┬──────┬──────┬───────────┬──────┐                                                                     ┌───────────┬──────┬──────┬─────┬──────────┐
+//    │          │      │      │           │      │                                                                     │           │      │      │     │          │
+//    ├──────────┼──────┼──────┼───────────┼──────┼─────┐                                                        ┌──────┼───────────┼──────┼──────┼─────┼──────────┤
+//    │          │ esc  │ ins  │ lsft(tab) │ del  │     │                                                        │      │           │      │      │     │          │
+//    ├──────────┼──────┼──────┼───────────┼──────┼─────┤                                                        ├──────┼───────────┼──────┼──────┼─────┼──────────┤
+//    │          │ ent  │ spc  │    tab    │ bspc │     │                                                        │      │ lsft(tab) │      │      │ tab │          │
+//    ├──────────┼──────┼──────┼───────────┼──────┼─────┤                                                        ├──────┼───────────┼──────┼──────┼─────┼──────────┤
+//    │ &sk lsft │ lgui │ lalt │  lctlTL   │ lsft │     │                                                        │ left │   down    │  up  │ rght │     │ &sk lsft │
+//    ├──────────┼──────┼──────┼───────────┼──────┼─────┼──────────────────────┬─────┬─────┐   ┌─────┬─────┬─────┼──────┼───────────┼──────┼──────┼─────┼──────────┤
+//    │          │      │      │           │      │     │                      │     │     │   │     │     │     │ home │   pgdn    │ pgup │ end  │     │          │
+//    ├──────────┼──────┼──────┼───────────┼──────┼─────┼──────────────────────┼─────┼─────┤   ├─────┼─────┼─────┼──────┼───────────┼──────┼──────┼─────┼──────────┤
+//    │          │      │      │           │      │     │ tog laltYER_CUrsftOR │     │     │   │     │     │     │      │           │      │      │     │          │
+//    └──────────┴──────┴──────┴───────────┴──────┘     └──────────────────────┴─────┴─────┘   └─────┴─────┴─────┘      └───────────┴──────┴──────┴─────┴──────────┘
+  &none       &none      &none       &none         &none                                                                                          &none         &none       &none       &none     &none
+  &none       &kp ESC    &kp INS     &kp LS(TAB)   &kp DEL     &none                                                                   &none      &none         &none       &none       &none     &none
+  &none       &kp RET    &kp SPACE   &kp TAB       &kp BSPC    &none                                                                   &none      &kp LS(TAB)   &none       &none       &kp TAB   &none
+  &sk LSHFT   &kp LGUI   &kp LALT    &kp LCTL      &kp LSHFT   &none                                                                   &kp LEFT   &kp DOWN      &kp UP      &kp RIGHT   &none     &sk LSHFT
+  &none       &none      &none       &none         &none       &none   &none               &none   &none       &none   &none   &none   &kp HOME   &kp PG_DN     &kp PG_UP   &kp END     &none     &none
+  &none       &none      &none       &none         &none               &tog LAYER_CURSOR   &none   &none       &none   &none   &none              &none         &none       &none       &none     &none
+      >;
+    };
 
     //         layer_cursor { // Layer 2
     //             display-name = "Cursor";
