@@ -160,6 +160,31 @@
   &none       &none      &none       &none         &none                    &none                  &none   &none       &kp C_NEXT   &kp C_VOL_DN   &kp C_VOL_UP                      &kp C_BRI_MAX   &kp C_BRI_UP   &kp C_BRI_DN   &kp C_BRI_MIN   &kp C_BRI_AUTO
       >;
     };
+
+    layer_symbols {// Layer 4
+      display-name = "Symbols";
+      bindings = <
+//    ┌─────────┬─────────┬─────────┬─────────┬─────────┐                                                                                     ┌─────────┬───────────┬──────┬──────┬─────┐
+//    │         │         │         │         │         │                                                                                     │         │           │      │      │     │
+//    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                                                     ┌─────┼─────────┼───────────┼──────┼──────┼─────┤
+//    │         │    `    │ lsft(9) │ lsft(0) │    ;    │    ,    │                                                                     │     │         │           │      │      │     │
+//    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                                     ├─────┼─────────┼───────────┼──────┼──────┼─────┤
+//    │ lsft(1) │    [    │ lsft([) │ lsft(]) │    ]    │ lsft(/) │                                                                     │  .  │   del   │ lsft(tab) │ ins  │ esc  │     │
+//    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                                     ├─────┼─────────┼───────────┼──────┼──────┼─────┤
+//    │ lsft(3) │ lsft(6) │    =    │ lsft(-) │ lsft(4) │ lsft(8) │                                                                     │  ,  │  bspc   │    tab    │ spc  │ ent  │     │
+//    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┬─────────┬─────────┐   ┌─────┬─────┬───────────────────────┼─────┼─────────┼───────────┼──────┼──────┼─────┤
+//    │ lsft(`) │ lsft(,) │ lsft(\) │    -    │ lsft(.) │    /    │    \    │    .    │ lsft(8) │   │     │     │                       │  ;  │ lsft(') │     '     │  `   │  \   │     │
+//    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────┼─────┼───────────────────────┼─────┼─────────┼───────────┼──────┼──────┼─────┤
+//    │         │ lsft(7) │    '    │ lsft(') │ lsft(=) │         │ lsft(5) │ lsft(;) │ lsft(2) │   │     │     │ tog laltYER_SYMBOlsft │     │  rsft   │   rctl    │ ralt │ rgui │     │
+//    └─────────┴─────────┴─────────┴─────────┴─────────┘         └─────────┴─────────┴─────────┘   └─────┴─────┴───────────────────────┘     └─────────┴───────────┴──────┴──────┴─────┘
+  &none           &none           &none          &none           &none                                                                                                                        &none                  &none         &none       &none      &none
+  &none           &kp GRAVE       &kp LS(N9)     &kp LS(N0)      &kp SEMI        &kp COMMA                                                                                        &none       &none                  &none         &none       &none      &none
+  &kp LS(N1)      &kp LBKT        &kp LS(LBKT)   &kp LS(RBKT)    &kp RBKT        &kp LS(FSLH)                                                                                     &kp DOT     &kp DEL                &kp LS(TAB)   &kp INS     &kp ESC    &none
+  &kp LS(N3)      &kp LS(N6)      &kp EQUAL      &kp LS(MINUS)   &kp LS(N4)      &kp LS(N8)                                                                                       &kp COMMA   &kp BSPC               &kp TAB       &kp SPACE   &kp RET    &none
+  &kp LS(GRAVE)   &kp LS(COMMA)   &kp LS(BSLH)   &kp MINUS       &kp LS(DOT)     &kp FSLH       &kp BSLH     &kp DOT        &kp LS(N8)       &none   &none   &none                &kp SEMI    &kp LS(SINGLE_QUOTE)   &kp SQT       &kp GRAVE   &kp BSLH   &trans
+  &none           &kp LS(N7)      &kp SQT        &kp LS(SQT)     &kp LS(EQUAL)                  &kp LS(N5)   &kp LS(SEMI)   &kp LS(N2)       &none   &none   &tog LAYER_SYMBOLS               &kp RSHFT              &kp RCTRL     &kp RALT    &kp RGUI   &none
+      >;
+    };
       display-name = "Magic";
       bindings = <
 //    ┌────────────┬─────┬─────┬─────┬─────┐                                                   ┌─────┬─────┬─────┬─────┬────────────┐
