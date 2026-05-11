@@ -14,9 +14,75 @@
 // layers
 #define LAYER_QWERTY  0
 #define LAYER_MAGIC 1
+// Home row mod tapping terms matching sunaku.keymap DIFFICULTY_LEVEL 0
+// TAPPING_RESOLUTION = 150, then: index=180, middle=210, ring=240, pinky=270
+#define HOME_INDEX_TERM 180
+#define HOME_MIDDY_TERM 210
+#define HOME_RINGY_TERM 240
+#define HOME_PINKY_TERM 270
 
 / {
   behaviors {
+    // Left home row mods
+    hm_lp: home_mod_left_pinky {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_PINKY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_lr: home_mod_left_ring {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_RINGY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_lm: home_mod_left_middy {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_MIDDY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_li: home_mod_left_index {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_INDEX_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+
+    // Right home row mods
+    hm_ri: home_mod_right_index {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_INDEX_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_rm: home_mod_right_middy {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_MIDDY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_rr: home_mod_right_ring {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_RINGY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+    hm_rp: home_mod_right_pinky {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HOME_PINKY_TERM>;
+      bindings = <&kp>, <&kp>;
+    };
+
     magic: magic_hold_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "MAGIC_HOLD_TAP";
@@ -39,28 +105,28 @@
   keymap {
     compatible = "zmk,keymap";
 
-    layer_qwerty {// Layer 0
+    layer_qwerty { // Layer 0
       display-name = "QWERTY";
       bindings = <
-//    ┌────────────────────────┬───────────┬───────────┬───────────┬───────────┐                                                          ┌───────────┬───────────┬───────────┬───────────┬────────────────────────┐
-//    │                        │           │           │           │           │                                                          │           │           │           │           │                        │
-//    ├────────────────────────┼───────────┼───────────┼───────────┼───────────┼───┐                                                  ┌───┼───────────┼───────────┼───────────┼───────────┼────────────────────────┤
-//    │                        │     1     │     2     │     3     │     4     │ 5 │                                                  │ 6 │     7     │     8     │     9     │     0     │                        │
-//    ├────────────────────────┼───────────┼───────────┼───────────┼───────────┼───┤                                                  ├───┼───────────┼───────────┼───────────┼───────────┼────────────────────────┤
-//    │                        │     Q     │     W     │     E     │     R     │ T │                                                  │ Y │     U     │     I     │     O     │     P     │           -            │
-//    ├────────────────────────┼───────────┼───────────┼───────────┼───────────┼───┤                                                  ├───┼───────────┼───────────┼───────────┼───────────┼────────────────────────┤
-//    │           =            │ mt lgui A │ mt lalt S │ mt lctl D │ mt lsft F │ G │                                                  │ H │ mt rsft J │ mt rctl K │ mt ralt L │ mt rgui ; │           '            │
-//    ├────────────────────────┼───────────┼───────────┼───────────┼───────────┼───┼──────┬──────┬──────┐   ┌─────────────┬─────┬─────┼───┼───────────┼───────────┼───────────┼───────────┼────────────────────────┤
-//    │          lsft          │     Z     │     X     │     C     │     V     │ B │ esc  │ lctl │ pgup │   │ K_SCROLL_up │ ins │ ent │ N │     M     │     ,     │     .     │     /     │          rsft          │
-//    ├────────────────────────┼───────────┼───────────┼───────────┼───────────┼───┼──────┼──────┼──────┤   ├─────────────┼─────┼─────┼───┼───────────┼───────────┼───────────┼───────────┼────────────────────────┤
-//    │ &magic laltYER_MAGIC 0 │     \     │     (     │     )     │     `     │   │ bspc │ del  │ pgdn │   │ K_SCROLL_up │ tab │ spc │   │           │     [     │     ]     │           │ &magic laltYER_MAGIC 0 │
-//    └────────────────────────┴───────────┴───────────┴───────────┴───────────┘   └──────┴──────┴──────┘   └─────────────┴─────┴─────┘   └───────────┴───────────┴───────────┴───────────┴────────────────────────┘
-  &none                  &none        &none        &none         &none                                                                                                             &none         &none         &none        &none           &none
-  &none                  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5                                                                                     &kp N6   &kp N7        &kp N8        &kp N9       &kp N0          &none
-  &none                  &kp Q        &kp W        &kp E         &kp R         &kp T                                                                                      &kp Y    &kp U         &kp I         &kp O        &kp P           &kp MINUS
-  &kp EQUAL              &mt LGUI A   &mt LALT S   &mt LCTRL D   &mt LSHFT F   &kp G                                                                                      &kp H    &mt RSHFT J   &mt RCTRL K   &mt RALT L   &mt RGUI SEMI   &kp SQT
-  &kp LSHFT              &kp Z        &kp X        &kp C         &kp V         &kp B    &kp ESC    &kp LCTRL   &kp PG_UP       &kp K_SCROLL_UP   &kp INSERT   &kp RET     &kp N    &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RSHFT
-  &magic LAYER_MAGIC 0   &kp BSLH     &kp LPAR     &kp RPAR      &kp GRAVE              &kp BSPC   &kp DEL     &kp PG_DN       &kp K_SCROLL_UP   &kp TAB      &kp SPACE            &none         &kp LBKT      &kp RBKT     &none           &magic LAYER_MAGIC 0
+//    ┌────────────────────────┬───────────────┬───────────────┬───────────────┬───────────────┐                                                          ┌───────────────┬───────────────┬───────────────┬───────────────┬────────────────────────┐
+//    │                        │               │               │               │               │                                                          │               │               │               │               │                        │
+//    ├────────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───┐                                                  ┌───┼───────────────┼───────────────┼───────────────┼───────────────┼────────────────────────┤
+//    │                        │       1       │       2       │       3       │       4       │ 5 │                                                  │ 6 │       7       │       8       │       9       │       0       │                        │
+//    ├────────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───┤                                                  ├───┼───────────────┼───────────────┼───────────────┼───────────────┼────────────────────────┤
+//    │                        │       Q       │       W       │       E       │       R       │ T │                                                  │ Y │       U       │       I       │       O       │       P       │           -            │
+//    ├────────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───┤                                                  ├───┼───────────────┼───────────────┼───────────────┼───────────────┼────────────────────────┤
+//    │           =            │ &hm_li lgui A │ &hm_lr lalt S │ &hm_lm lctl D │ &hm_lp lsft F │ G │                                                  │ H │ &hm_ri rsft J │ &hm_rm rctl K │ &hm_rr ralt L │ &hm_rp rgui ; │           '            │
+//    ├────────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───┼──────┬──────┬──────┐   ┌─────────────┬─────┬─────┼───┼───────────────┼───────────────┼───────────────┼───────────────┼────────────────────────┤
+//    │          lsft          │       Z       │       X       │       C       │       V       │ B │ esc  │ lctl │ pgup │   │ K_SCROLL_up │ ins │ ent │ N │       M       │       ,       │       .       │       /       │          rsft          │
+//    ├────────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┼───┼──────┼──────┼──────┤   ├─────────────┼─────┼─────┼───┼───────────────┼───────────────┼───────────────┼───────────────┼────────────────────────┤
+//    │ &magic laltYER_MAGIC 0 │       \       │       (       │       )       │       `       │   │ bspc │ del  │ pgdn │   │ K_SCROLL_up │ tab │ spc │   │               │       [       │       ]       │               │ &magic laltYER_MAGIC 0 │
+//    └────────────────────────┴───────────────┴───────────────┴───────────────┴───────────────┘   └──────┴──────┴──────┘   └─────────────┴─────┴─────┘   └───────────────┴───────────────┴───────────────┴───────────────┴────────────────────────┘
+  &none                  &none           &none           &none            &none                                                                                                                &none            &none            &none           &none              &none
+  &none                  &kp N1          &kp N2          &kp N3           &kp N4           &kp N5                                                                                     &kp N6   &kp N7           &kp N8           &kp N9          &kp N0             &none
+  &none                  &kp Q           &kp W           &kp E            &kp R            &kp T                                                                                      &kp Y    &kp U            &kp I            &kp O           &kp P              &kp MINUS
+  &kp EQUAL              &hm_li LGUI A   &hm_lr LALT S   &hm_lm LCTRL D   &hm_lp LSHFT F   &kp G                                                                                      &kp H    &hm_ri RSHFT J   &hm_rm RCTRL K   &hm_rr RALT L   &hm_rp RGUI SEMI   &kp SQT
+  &kp LSHFT              &kp Z           &kp X           &kp C            &kp V            &kp B    &kp ESC    &kp LCTRL   &kp PG_UP       &kp K_SCROLL_UP   &kp INSERT   &kp RET     &kp N    &kp M            &kp COMMA        &kp DOT         &kp FSLH           &kp RSHFT
+  &magic LAYER_MAGIC 0   &kp BSLH        &kp LPAR        &kp RPAR         &kp GRAVE                 &kp BSPC   &kp DEL     &kp PG_DN       &kp K_SCROLL_UP   &kp TAB      &kp SPACE            &none            &kp LBKT         &kp RBKT        &none              &magic LAYER_MAGIC 0
       >;
     };
 
