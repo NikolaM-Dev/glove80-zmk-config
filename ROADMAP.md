@@ -7,7 +7,7 @@
 - [ ] Add important layouts.
   - [x] Symbols ✅ 2026-05-10
   - [x] Functions ✅ 2026-05-10
-  - [ ] Numbers
+  - [x] Numbers ✅ 2026-05-10
   - [ ] Cursor
   - [ ] Mouse
 - [ ] Add key repetition.
