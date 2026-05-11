@@ -1,4 +1,4 @@
-FROM nixpkgs/nix:nixos-23.11
+FROM nixpkgs/nix:nixos-24.11
 
 ENV PATH=/root/.nix-profile/bin:/usr/bin:/bin
 
@@ -35,7 +35,7 @@ COPY --chmod=755 <<EOF /bin/entrypoint.sh
 
     echo 'Building Glove80 firmware' >&2
     cd /config
-    nix-build ./config --arg firmware 'import /src/default.nix {}' -j2 -o /tmp/combined --show-trace
+    nix-build ./config --arg firmware 'import /src/default.nix {}' -j$(nproc) -o /tmp/combined --show-trace
     install -o "\$UID" -g "\$GID" /tmp/combined/glove80.uf2 ./glove80.uf2
 EOF
 
