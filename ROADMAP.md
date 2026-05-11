@@ -4,14 +4,9 @@
 
 ## 🔴 P1
 
-- [ ] Add important layouts.
-  - [x] Symbols ✅ 2026-05-10
-  - [x] Functions ✅ 2026-05-10
-  - [x] Numbers ✅ 2026-05-10
-  - [ ] Cursor
-  - [ ] Mouse
 - [ ] Add key repetition.
 - [ ] Improve the layouts adding the custom behavior.
+  - [ ] Add copy and paste support
 
 ## 🟠 P2
 
@@ -27,5 +22,12 @@
 
 ## 🗃️ Archive
 
+- [x] Add base important layouts. ✅ 2026-05-11
+  - [x] Symbols ✅ 2026-05-10
+  - [x] Functions ✅ 2026-05-10
+  - [x] Numbers ✅ 2026-05-10
+  - [x] Cursor ✅ 2026-05-10
+  - [x] Mouse ✅ 2026-05-11
+- [x] Improve the `thumb` behavior ✅ 2026-05-11
 - [x] Improve the home rows feeling using custom tapping terms ✅ 2026-05-10
 - [x] Add Home rows ✅ 2026-05-10
