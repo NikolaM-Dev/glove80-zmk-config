@@ -4,7 +4,6 @@
 
 ## 🔴 P1
 
-- [ ] Add key repetition.
 - [ ] Improve the layouts adding the custom behavior.
   - [x] Add copy and paste support ✅ 2026-05-11
   - [x] Add support for smart caps words ✅ 2026-05-11
@@ -17,12 +16,13 @@
 ## 🟡 P3
 
 - [ ] Learn how to use the RGB stuff.
-- [ ] Improve the Magic layer.
 
 ---
 
 ## 🗃️ Archive
 
+- [x] Add key repetition. ✅ 2026-05-11
+- [x] Improve the Magic layer. ✅ 2026-05-11
 - [x] Add base important layouts. ✅ 2026-05-11
   - [x] Symbols ✅ 2026-05-10
   - [x] Functions ✅ 2026-05-10
