@@ -275,6 +275,33 @@
   &none           &kp LS(N7)      &kp SQT        &kp LS(SQT)     &kp LS(EQUAL)                  &kp LS(N5)   &kp LS(SEMI)   &kp LS(N2)       &none   &none   &tog LAYER_SYMBOLS               &kp RSHFT              &kp RCTRL     &kp RALT    &kp RGUI   &none
       >;
     };
+
+    layer_mouse {// Layer 5
+      display-name = "Mouse";
+      bindings = <
+//    ┌─────┬─────┬─────┬─────┬─────┐                                                                 ┌─────┬─────┬─────┬─────┬─────┐
+//    │     │     │     │     │     │                                                                 │     │     │     │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┐                                                     ┌─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │     │     │     │     │     │                                                     │     │     │     │     │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤                                                     ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │     │     │     │     │     │                                                     │     │     │     │     │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┤                                                     ├─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │     │     │     │     │     │                                                     │     │     │     │     │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┬─────┬─────┐   ┌─────┬───────────────────┬─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │     │     │     │     │     │     │     │     │   │     │                   │     │     │     │     │     │     │     │
+//    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼───────────────────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+//    │     │     │     │     │     │     │     │     │     │   │     │ tog laltYER_MOUSE │     │     │     │     │     │     │     │
+//    └─────┴─────┴─────┴─────┴─────┘     └─────┴─────┴─────┘   └─────┴───────────────────┴─────┘     └─────┴─────┴─────┴─────┴─────┘
+  &none   &none   &none   &none   &none                                                                                  &none   &none   &none   &none   &none
+  &none   &none   &none   &none   &none   &none                                                                  &none   &none   &none   &none   &none   &none
+  &none   &none   &none   &none   &none   &none                                                                  &none   &none   &none   &none   &none   &none
+  &none   &none   &none   &none   &none   &none                                                                  &none   &none   &none   &none   &none   &none
+  &none   &none   &none   &none   &none   &none   &none   &none   &none       &none   &none              &none   &none   &none   &none   &none   &none   &none
+  &none   &none   &none   &none   &none           &none   &none   &none       &none   &tog LAYER_MOUSE   &none           &none   &none   &none   &none   &none
+      >;
+    };
+
+    layer_magic {// Layer 6
       display-name = "Magic";
       bindings = <
 //    ┌────────────┬─────────┬─────────┬─────────┬─────────┐                                                                ┌─────┬─────┬─────┬─────┬────────────┐
