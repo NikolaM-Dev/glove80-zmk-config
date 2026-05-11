@@ -111,7 +111,7 @@
   keymap {
     compatible = "zmk,keymap";
 
-    layer_qwerty { // Layer 0
+    layer_qwerty {// Layer 0
       display-name = "QWERTY";
       bindings = <
 //    ┌────────────────────────┬───────────────┬───────────────┬───────────────┬───────────────┐                                                          ┌───────────────┬───────────────┬───────────────┬───────────────┬────────────────────────┐
@@ -136,7 +136,30 @@
       >;
     };
 
-    layer_magic {// Layer 1
+    layer_function {// Layer 1
+      display-name = "Function";
+      bindings = <
+//    ┌──────────┬──────┬──────┬───────────┬──────┐                                                                                     ┌─────────┬──────┬──────┬─────────┬──────────┐
+//    │          │      │      │           │      │                                                                                     │         │      │      │         │          │
+//    ├──────────┼──────┼──────┼───────────┼──────┼──────────┐                                                           ┌──────────────┼─────────┼──────┼──────┼─────────┼──────────┤
+//    │          │ esc  │ ins  │ lsft(tab) │ del  │          │                                                           │ C_MEDIA_home │  play   │ prev │ next │  stop   │  eject   │
+//    ├──────────┼──────┼──────┼───────────┼──────┼──────────┤                                                           ├──────────────┼─────────┼──────┼──────┼─────────┼──────────┤
+//    │          │ ent  │ spc  │    tab    │ bspc │ K_CAlctl │                                                           │   K_CAlctl   │   f1    │  f2  │  f3  │   f10   │   f13    │
+//    ├──────────┼──────┼──────┼───────────┼──────┼──────────┤                                                           ├──────────────┼─────────┼──────┼──────┼─────────┼──────────┤
+//    │ &sk lsft │ lgui │ lalt │  lctlTL   │ lsft │  K_WWW   │                                                           │    K_WWW     │   f4    │  f5  │  f6  │   f11   │   f14    │
+//    ├──────────┼──────┼──────┼───────────┼──────┼──────────┼──────────────────────┬─────┬─────┐   ┌──────┬──────┬──────┼──────────────┼─────────┼──────┼──────┼─────────┼──────────┤
+//    │          │      │      │           │      │          │ tog laltYER_FUNCTION │     │     │   │ prev │ play │ mute │              │   f7    │  f8  │  f9  │   f12   │   f15    │
+//    ├──────────┼──────┼──────┼───────────┼──────┼──────────┼──────────────────────┼─────┼─────┤   ├──────┼──────┼──────┼──────────────┼─────────┼──────┼──────┼─────────┼──────────┤
+//    │          │      │      │           │      │          │                      │     │     │   │ next │ vold │ volu │              │ bri_max │ bri+ │ bri- │ bri_min │ bri_auto │
+//    └──────────┴──────┴──────┴───────────┴──────┘          └──────────────────────┴─────┴─────┘   └──────┴──────┴──────┘              └─────────┴──────┴──────┴─────────┴──────────┘
+  &none       &none      &none       &none         &none                                                                                                                            &none           &none          &none          &none           &none
+  &none       &kp ESC    &kp INS     &kp LS(TAB)   &kp DEL     &none                                                                                             &kp C_MEDIA_HOME   &kp C_PLAY      &kp C_PREV     &kp C_NEXT     &kp C_STOP      &kp C_EJECT
+  &none       &kp RET    &kp SPACE   &kp TAB       &kp BSPC    &kp K_CALC                                                                                        &kp K_CALC         &kp F1          &kp F2         &kp F3         &kp F10         &kp F13
+  &sk LSHFT   &kp LGUI   &kp LALT    &kp LCTL      &kp LSHFT   &kp K_WWW                                                                                         &kp K_WWW          &kp F4          &kp F5         &kp F6         &kp F11         &kp F14
+  &none       &none      &none       &none         &none       &none        &tog LAYER_FUNCTION   &none   &none       &kp C_PREV   &kp C_PP       &kp C_MUTE     &none              &kp F7          &kp F8         &kp F9         &kp F12         &kp F15
+  &none       &none      &none       &none         &none                    &none                 &none   &none       &kp C_NEXT   &kp C_VOL_DN   &kp C_VOL_UP                      &kp C_BRI_MAX   &kp C_BRI_UP   &kp C_BRI_DN   &kp C_BRI_MIN   &kp C_BRI_AUTO
+      >;
+    };
       display-name = "Magic";
       bindings = <
 //    ┌────────────┬─────┬─────┬─────┬─────┐                                                   ┌─────┬─────┬─────┬─────┬────────────┐
