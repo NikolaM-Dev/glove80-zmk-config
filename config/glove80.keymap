@@ -226,39 +226,27 @@
       >;
     };
 
-    //         layer_cursor { // Layer 2
-    //             display-name = "Cursor";
-    //           bindings = <
-    //           &none               &none               &none               &none               &none                                                                                                             &none           &none           &none      &none      &none
-    //           &none             &kp ESC             &kp INS         &kp LS(TAB)             &kp DEL       &none                                                                                    &none        &none           &none           &none      &none      &none
-    //           &none             &kp RET           &kp SPACE             &kp TAB            &kp BSPC    &kp _CUT                                                                                 &kp _CUT  &kp LS(TAB)       &kp _UNDO       &kp _REDO    &kp TAB      &none
-    //           &sk LSHFT  &kp LEFT_PINKY_MOD  &kp LEFT_RINGY_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY                                                                                &kp _COPY     &kp LEFT          &kp UP        &kp DOWN  &kp RIGHT  &sk LSHFT
-    //           &kp _C(L)         &select_all        &select_line        &select_ord           &kp _FIND  &kp _PASTE              &none   &none   &none  &select_none  &extend_line  &extend_word  &kp _PASTE    &kp _HOME       &kp PG_UP       &kp PG_DN   &kp _END  &kp _C(L)
-    //   &kp _C(K)           &kp _UNDO           &kp _REDO      &kp _FIND_PREV      &kp _FIND_NEXT              &tog LAYER_Cursor   &none   &none   &select_all  &select_line  &select_word                &kp _FIND  &kp _FIND_PREV  &kp _FIND_NEXT  &kp _C(H)  &kp _C(K)
-    //   >;
-    // };
-    //
     layer_numbers {// Layer 3
-        display-name = "Numbers";
+      display-name = "Numbers";
       bindings = <
 //    ┌──────────┬──────┬──────┬───────────┬──────┐                                                                         ┌─────────┬─────────┬─────────┬─────────┬─────────┐
 //    │          │      │      │           │      │                                                                         │    A    │    B    │    C    │    D    │    E    │
 //    ├──────────┼──────┼──────┼───────────┼──────┼─────┐                                                         ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 //    │          │ esc  │ ins  │ lsft(tab) │ del  │     │                                                         │ lsft(\) │ lsft(3) │ lsft(4) │ lsft(6) │ lsft(`) │ lsft(1) │
 //    ├──────────┼──────┼──────┼───────────┼──────┼─────┤                                                         ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-//    │          │ ent  │ spc  │    tab    │ bspc │  0  │                                                         │ lsft(G) │    7    │    8    │    9    │ lsft(;) │ lsft(5) │
+//    │          │ ent  │ spc  │    tab    │ bspc │  0  │                                                         │ lsft(G) │    1    │    2    │    3    │ lsft(;) │ lsft(5) │
 //    ├──────────┼──────┼──────┼───────────┼──────┼─────┤                                                         ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 //    │ &sk lsft │ lgui │ lctl │   lalt    │ lsft │  X  │                                                         │    K    │    4    │    5    │    6    │    -    │ lsft(=) │
 //    ├──────────┼──────┼──────┼───────────┼──────┼─────┼─────┬───────────────────────┬─────┐   ┌─────────┬───┬───┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-//    │    E     │      │      │           │      │  F  │     │                       │     │   │ lsft(,) │ = │ , │    J    │    1    │    2    │    3    │    /    │ lsft(8) │
+//    │    E     │      │      │           │      │  F  │     │                       │     │   │ lsft(,) │ = │ , │    J    │    7    │    8    │    9    │    /    │ lsft(8) │
 //    ├──────────┼──────┼──────┼───────────┼──────┼─────┼─────┼───────────────────────┼─────┤   ├─────────┼───┼───┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 //    │ lsft(-)  │      │      │           │      │     │     │ tog laltYER_NUMBErsft │     │   │ lsft(.) │ . │ 0 │         │ lsft(9) │    [    │    ]    │ lsft(0) │ lsft(2) │
 //    └──────────┴──────┴──────┴───────────┴──────┘     └─────┴───────────────────────┴─────┘   └─────────┴───┴───┘         └─────────┴─────────┴─────────┴─────────┴─────────┘
   &none           &none      &none       &none         &none                                                                                                                &kp A        &kp B        &kp C        &kp D           &kp E
   &none           &kp ESC    &kp INS     &kp LS(TAB)   &kp DEL     &none                                                                                     &kp LS(BSLH)   &kp LS(N3)   &kp LS(N4)   &kp LS(N6)   &kp LS(GRAVE)   &kp LS(N1)
-  &none           &kp RET    &kp SPACE   &kp TAB       &kp BSPC    &kp N0                                                                                    &kp LS(G)      &kp N7       &kp N8       &kp N9       &kp LS(SEMI)    &kp LS(N5)
+  &none           &kp RET    &kp SPACE   &kp TAB       &kp BSPC    &kp N0                                                                                    &kp LS(G)      &kp N1       &kp N2       &kp N3       &kp LS(SEMI)    &kp LS(N5)
   &sk LSHFT       &kp LGUI   &kp LCTRL   &kp LALT      &kp LSHFT   &kp X                                                                                     &kp K          &kp N4       &kp N5       &kp N6       &kp MINUS       &kp LS(EQUAL)
-  &kp E           &none      &none       &none         &none       &kp F    &none   &none                &none       &kp LS(COMMA)   &kp EQUAL   &kp COMMA   &kp J          &kp N1       &kp N2       &kp N3       &kp FSLH        &kp LS(N8)
+  &kp E           &none      &none       &none         &none       &kp F    &none   &none                &none       &kp LS(COMMA)   &kp EQUAL   &kp COMMA   &kp J          &kp N7       &kp N8       &kp N9       &kp FSLH        &kp LS(N8)
   &kp LS(MINUS)   &none      &none       &none         &none                &none   &tog LAYER_NUMBERS   &none       &kp LS(DOT)     &kp DOT     &kp N0                     &kp LS(N9)   &kp LBKT     &kp RBKT     &kp LS(N0)      &kp LS(N2)
       >;
     };
