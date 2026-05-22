@@ -28,14 +28,14 @@
 // your taps as being holds when typing on home row mod keys. Lower = faster detection.
 #define TAPPING_RESOLUTION 150
 
-// index finger: shortest reach, needs least time (TAPPING_RESOLUTION + 30ms)
-#define HOME_INDEX_TERM (TAPPING_RESOLUTION + 30)
-// middle finger: medium reach (TAPPING_RESOLUTION + 60ms)
-#define HOME_MIDDY_TERM (TAPPING_RESOLUTION + 60)
-// ring finger: longer reach (TAPPING_RESOLUTION + 90ms)
-#define HOME_RINGY_TERM (TAPPING_RESOLUTION + 90)
-// pinky finger: longest reach, needs most time (TAPPING_RESOLUTION + 120ms)
-#define HOME_PINKY_TERM (TAPPING_RESOLUTION + 120)
+// index finger: shortest reach, needs least time (default: 180)
+#define HOME_INDEX_TERM 160
+// middle finger: medium reach (default: 210)
+#define HOME_MIDDY_TERM 210
+// ring finger: longer reach (default: 240)
+#define HOME_RINGY_TERM 240
+// pinky finger: longest reach, needs most time (default: 270)
+#define HOME_PINKY_TERM 270
 
 
 / {
