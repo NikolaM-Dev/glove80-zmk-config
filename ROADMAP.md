@@ -4,18 +4,21 @@
 
 ## 🔴 P1
 
-- [ ] Improve the layouts adding the custom behavior.
-  - [x] Add copy and paste support ✅ 2026-05-11
-  - [x] Add support for smart caps words ✅ 2026-05-11
+- [ ] Improve the layouts adding the custom behavior. ➕ 2026-05-11
+  - [x] Add copy and paste support ✅ 2026-05-11 ➕ 2026-05-11
+  - [x] Add support for smart caps words ✅ 2026-05-11 ➕ 2026-05-11
 
 ## 🟠 P2
 
-- [ ] Add a GitHub workflow for generate the keyboard layouts documentation.
-- [ ] Add links to the Sunaku work
+- [ ] Add a GitHub workflow for generate the keyboard layouts documentation. ➕ 2026-05-11
+- [ ] Add links to the Sunaku work. ➕ 2026-05-11
+  - [ ] [Taming home row mods with bilateral combinations - The Terminal Programmer](https://sunaku.github.io/home-row-mods.html#problem) ➕ 2026-05-11
+  - [ ] https://github.com/sunaku/glove80-keymaps ➕ 2026-05-11
+  - [ ] [peccu/zmk-cheat-sheet: ZMK cheat sheet picked up from official document.](https://github.com/peccu/zmk-cheat-sheet) ➕ 2026-05-11
 
 ## 🟡 P3
 
-- [ ] Learn how to use the RGB stuff.
+- [ ] Learn how to use the RGB stuff. ➕ 2026-05-11
 
 ---
 
