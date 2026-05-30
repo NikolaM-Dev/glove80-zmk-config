@@ -19,7 +19,8 @@
 #define LAYER_NUMBERS   3
 #define LAYER_SYMBOLS   4
 #define LAYER_MOUSE     5
-#define LAYER_MAGIC     6
+#define LAYER_WINDOWS   6
+#define LAYER_MAGIC     7
 
 // prevent consecutive quick taps from being interpreted as holds
 #define HOME_QUICK_TAP_MS 300
@@ -287,28 +288,53 @@
       >;
     };
 
-    layer_magic {// Layer 6
+    layer_windows {// Layer 6
+      display-name = "Windows";
+      bindings = <
+//    ┌────────────────────────┬─────┬─────┬─────┬─────┐                                                                                                                                   ┌─────┬─────┬─────┬─────┬────────────────────────┐
+//    │                        │     │     │     │     │                                                                                                                                   │     │     │     │     │                        │
+//    ├────────────────────────┼─────┼─────┼─────┼─────┼───┐                                                                                                                           ┌───┼─────┼─────┼─────┼─────┼────────────────────────┤
+//    │                        │  1  │  2  │  3  │  4  │ 5 │                                                                                                                           │ 6 │  7  │  8  │  9  │  0  │                        │
+//    ├────────────────────────┼─────┼─────┼─────┼─────┼───┤                                                                                                                           ├───┼─────┼─────┼─────┼─────┼────────────────────────┤
+//    │         capsw          │  Q  │  W  │  E  │  R  │ T │                                                                                                                           │ Y │  U  │  I  │  O  │  P  │           -            │
+//    ├────────────────────────┼─────┼─────┼─────┼─────┼───┤                                                                                                                           ├───┼─────┼─────┼─────┼─────┼────────────────────────┤
+//    │           =            │  A  │  S  │  D  │  F  │ G │                                                                                                                           │ H │  J  │  K  │  L  │  ;  │           '            │
+//    ├────────────────────────┼─────┼─────┼─────┼─────┼───┼──────────────────────────────┬──────────────────────────────┬──────┐   ┌─────────────┬─────┬──────────────────────────────┼───┼─────┼─────┼─────┼─────┼────────────────────────┤
+//    │          lsft          │  Z  │  X  │  C  │  V  │ B │ &thumb laltYER_FUNCTIONS esc │             lctl             │ pgup │   │ K_SCROLL_up │ ins │             ent              │ N │  M  │  ,  │  .  │  /  │          rsft          │
+//    ├────────────────────────┼─────┼─────┼─────┼─────┼───┼──────────────────────────────┼──────────────────────────────┼──────┤   ├─────────────┼─────┼──────────────────────────────┼───┼─────┼─────┼─────┼─────┼────────────────────────┤
+//    │ &magic laltYER_MAGIC 0 │  \  │  (  │  )  │  `  │   │ &thumb laltYER_CUrsftOR bspc │ &thumb laltYER_NUMBErsft del │ pgdn │   │ K_SCROLL_up │ tab │ &thumb laltYER_SYMBOlsft spc │   │     │  [  │  ]  │     │ &magic laltYER_MAGIC 0 │
+//    └────────────────────────┴─────┴─────┴─────┴─────┘   └──────────────────────────────┴──────────────────────────────┴──────┘   └─────────────┴─────┴──────────────────────────────┘   └─────┴─────┴─────┴─────┴────────────────────────┘
+  &none                  &none      &none      &none      &none                                                                                                                                                             &none    &none       &none      &none      &none
+  &none                  &kp N1     &kp N2     &kp N3     &kp N4      &kp N5                                                                                                                                       &kp N6   &kp N7   &kp N8      &kp N9     &kp N0     &none
+  &caps_word             &kp Q      &kp W      &kp E      &kp R       &kp T                                                                                                                                        &kp Y    &kp U    &kp I       &kp O      &kp P      &kp MINUS
+  &kp EQUAL              &kp A      &kp S      &kp D      &kp F       &kp G                                                                                                                                        &kp H    &kp J    &kp K       &kp L      &kp SEMI   &kp SQT
+  &kp LSHFT              &kp Z      &kp X      &kp C      &kp V       &kp B    &thumb LAYER_FUNCTIONS ESC   &kp LCTRL                  &kp PG_UP       &kp K_SCROLL_UP   &kp INSERT   &kp RET                      &kp N    &kp M    &kp COMMA   &kp DOT    &kp FSLH   &kp RSHFT
+  &magic LAYER_MAGIC 0   &kp BSLH   &kp LPAR   &kp RPAR   &kp GRAVE            &thumb LAYER_CURSOR BSPC     &thumb LAYER_NUMBERS DEL   &kp PG_DN       &kp K_SCROLL_UP   &kp TAB      &thumb LAYER_SYMBOLS SPACE            &none    &kp LBKT    &kp RBKT   &none      &magic LAYER_MAGIC 0
+      >;
+    };
+
+    layer_magic {// Layer 7
       display-name = "Magic";
       bindings = <
-//    ┌────────────┬─────────┬─────────┬─────────┬─────────┐                                                                ┌─────┬─────┬─────┬─────┬────────────┐
-//    │   bt_clr   │         │         │         │         │                                                                │     │     │     │     │ bt_clr_ALL │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┐                                                ┌─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │         │         │         │         │         │                                                │     │     │     │     │     │            │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │ ug_ sp+ │ ug_ sa+ │ ug_ hu+ │ ug_ br+ │ ug_ tog │                                                │     │     │     │     │     │            │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │    boot    │ ug_ sp- │ ug_ sa- │ ug_ hu- │ ug_ br- │ ug_ eff │                                                │     │     │     │     │     │    boot    │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┬───────┬──────────┐   ┌─────┬─────┬─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │ &sys_reset │         │         │         │         │         │ &bt_2 │ &bt_3 │          │   │     │     │     │     │     │     │     │     │ &sys_reset │
-//    ├────────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┼───────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
-//    │            │         │         │         │         │         │ &bt_0 │ &bt_1 │ out_ usb │   │     │     │     │     │     │     │     │     │            │
-//    └────────────┴─────────┴─────────┴─────────┴─────────┘         └───────┴───────┴──────────┘   └─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴────────────┘
-  &bt BT_CLR    &none             &none             &none             &none                                                                                                  &none   &none   &none   &none   &bt BT_CLR_ALL
-  &none         &none             &none             &none             &none             &none                                                                        &none   &none   &none   &none   &none   &none
-  &none         &rgb_ug RGB_SPI   &rgb_ug RGB_SAI   &rgb_ug RGB_HUI   &rgb_ug RGB_BRI   &rgb_ug RGB_TOG                                                              &none   &none   &none   &none   &none   &none
-  &bootloader   &rgb_ug RGB_SPD   &rgb_ug RGB_SAD   &rgb_ug RGB_HUD   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF                                                              &none   &none   &none   &none   &none   &bootloader
-  &sys_reset    &none             &none             &none             &none             &none             &bt_2   &bt_3   &none              &none   &none   &none   &none   &none   &none   &none   &none   &sys_reset
-  &none         &none             &none             &none             &none                               &bt_0   &bt_1   &out OUT_USB       &none   &none   &none           &none   &none   &none   &none   &none
+//    ┌────────────┬───────────────────┬────────────────────┬─────────┬─────────┐                                                                ┌─────┬─────┬─────┬─────┬────────────┐
+//    │   bt_clr   │                   │                    │         │         │                                                                │     │     │     │     │ bt_clr_ALL │
+//    ├────────────┼───────────────────┼────────────────────┼─────────┼─────────┼─────────┐                                                ┌─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │ to laltYER_QWERTY │ to laltYER_WINDOWS │         │         │         │                                                │     │     │     │     │     │            │
+//    ├────────────┼───────────────────┼────────────────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │      ug_ sp+      │      ug_ sa+       │ ug_ hu+ │ ug_ br+ │ ug_ tog │                                                │     │     │     │     │     │            │
+//    ├────────────┼───────────────────┼────────────────────┼─────────┼─────────┼─────────┤                                                ├─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │    boot    │      ug_ sp-      │      ug_ sa-       │ ug_ hu- │ ug_ br- │ ug_ eff │                                                │     │     │     │     │     │    boot    │
+//    ├────────────┼───────────────────┼────────────────────┼─────────┼─────────┼─────────┼───────┬───────┬──────────┐   ┌─────┬─────┬─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │ &sys_reset │                   │                    │         │         │         │ &bt_2 │ &bt_3 │          │   │     │     │     │     │     │     │     │     │ &sys_reset │
+//    ├────────────┼───────────────────┼────────────────────┼─────────┼─────────┼─────────┼───────┼───────┼──────────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼────────────┤
+//    │            │                   │                    │         │         │         │ &bt_0 │ &bt_1 │ out_ usb │   │     │     │     │     │     │     │     │     │            │
+//    └────────────┴───────────────────┴────────────────────┴─────────┴─────────┘         └───────┴───────┴──────────┘   └─────┴─────┴─────┘     └─────┴─────┴─────┴─────┴────────────┘
+  &bt BT_CLR    &none              &none               &none             &none                                                                                                  &none   &none   &none   &none   &bt BT_CLR_ALL
+  &none         &to LAYER_QWERTY   &to LAYER_WINDOWS   &none             &none             &none                                                                        &none   &none   &none   &none   &none   &none
+  &none         &rgb_ug RGB_SPI    &rgb_ug RGB_SAI     &rgb_ug RGB_HUI   &rgb_ug RGB_BRI   &rgb_ug RGB_TOG                                                              &none   &none   &none   &none   &none   &none
+  &bootloader   &rgb_ug RGB_SPD    &rgb_ug RGB_SAD     &rgb_ug RGB_HUD   &rgb_ug RGB_BRD   &rgb_ug RGB_EFF                                                              &none   &none   &none   &none   &none   &bootloader
+  &sys_reset    &none              &none               &none             &none             &none             &bt_2   &bt_3   &none              &none   &none   &none   &none   &none   &none   &none   &none   &sys_reset
+  &none         &none              &none               &none             &none                               &bt_0   &bt_1   &out OUT_USB       &none   &none   &none           &none   &none   &none   &none   &none
       >;
     };
   };
