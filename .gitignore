@@ -2,5 +2,8 @@
 *~
 *.uf2
 
+# keyboard drawer
+kd-layout.yaml
+
 # references
 sunaku-config
