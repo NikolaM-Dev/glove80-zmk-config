@@ -7,12 +7,13 @@
 - [ ] Add keyboard drawer support ➕ 2026-05-30
   - [x] Add keyboard drawer config ➕ 2026-05-30 ✅ 2026-05-30
   - [x] Add `just` recipes to build the keyboard drawer. ➕ 2026-05-30 ✅ 2026-05-30
-  - [ ] Add `kg-layout.yaml` to `.gitignore` ➕ 2026-05-30
-  - [ ] Update the `README.md` to use the `glove80-draw.png`. ➕ 2026-05-30
+  - [x] Add `kg-layout.yaml` to `.gitignore` ➕ 2026-05-30 ✅ 2026-05-30
+  - [x] Update the `README.md` to use the `glove80-draw.png`. ➕ 2026-05-30 ✅ 2026-05-30
   - [ ] Add a GitHub workflow to use the keyboard drawer. ➕ 2026-05-11
 
 ## 🟠 P2
 
+- [ ] Docs ➕ 2026-05-30
 - [ ] Add links to the Sunaku work. ➕ 2026-05-11
   - [ ] [Taming home row mods with bilateral combinations - The Terminal Programmer](https://sunaku.github.io/home-row-mods.html#problem) ➕ 2026-05-11
   - [ ] https://github.com/sunaku/glove80-keymaps ➕ 2026-05-11
