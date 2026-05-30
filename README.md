@@ -2,7 +2,7 @@
   <img
     alt="Moergo Logo"
     src="https://raw.githubusercontent.com/NikolaM-Dev/glove80-zmk-config/main/docs/assets/moergo-logo.avif"
-    width="200"
+    width="280"
   />
   <br />
   ZMK MoErgo Glove80 Configuration ⌨ 💿️
@@ -44,11 +44,11 @@
 - [📍 Overview](#-overview)
 - [✨ Features](#-features)
 - [⛅ Behind The Code](#-behind-the-code)
-	- [🌈 Inspiration](#-inspiration)
-	- [💡 Challenges / Learnings](#-challenges--learnings)
+  - [🌈 Inspiration](#-inspiration)
+  - [💡 Challenges / Learnings](#-challenges--learnings)
 - [⚡ Quick Start](#-quick-start)
-	- [🏕️ Run Locally](#️-run-locally)
-	- [🛣️️ ROADMAP](#️️-roadmap)
+  - [🏕️ Run Locally](#️-run-locally)
+  - [🛣️️ ROADMAP](#️️-roadmap)
 - [🫂 Acknowledgments](#-acknowledgments)
 
 </details>
