@@ -14,6 +14,7 @@
 ## 🟠 P2
 
 - [ ] Docs ➕ 2026-05-30
+  - [x] Update the LICENSE ➕ 2026-05-30 ✅ 2026-05-30
 - [ ] Add links to the Sunaku work. ➕ 2026-05-11
   - [ ] [Taming home row mods with bilateral combinations - The Terminal Programmer](https://sunaku.github.io/home-row-mods.html#problem) ➕ 2026-05-11
   - [ ] https://github.com/sunaku/glove80-keymaps ➕ 2026-05-11
@@ -39,6 +40,7 @@
 
 ## 🗃️ Archive
 
+- [x] Fix the Windows layer problem. Currently it is not able to use the other layers ➕ 2026-05-30 ✅ 2026-05-30
 - [x] Improve the layouts adding the custom behavior. ➕ 2026-05-11 ✅ 2026-05-30
   - [x] Add copy and paste support ✅ 2026-05-11 ➕ 2026-05-11
   - [x] Add support for smart caps words ✅ 2026-05-11 ➕ 2026-05-11
