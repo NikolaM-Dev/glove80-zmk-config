@@ -71,3 +71,16 @@ _flash-side label side boot-key:
     sync
 
     echo "==> ${SIDE} half flashed!"
+
+# Parse the ZMK keymap into keymap-drawer's YAML layout format
+parse:
+    uvx --from keymap-drawer keymap \
+    -c ./docs/kd-config.yaml \
+    parse -z ./config/glove80.keymap > ./docs/kd-layout.yaml
+
+# Render the parsed keymap layout to a PNG diagram
+draw: parse
+    uvx --from keymap-drawer keymap \
+    -c ./docs/kd-config.yaml \
+    draw ./docs/kd-layout.yaml \
+    | rsvg-convert -o ./docs/glove80-draw.png
