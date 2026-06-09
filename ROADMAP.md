@@ -10,6 +10,7 @@
   - [x] Add `kg-layout.yaml` to `.gitignore` ➕ 2026-05-30 ✅ 2026-05-30
   - [x] Update the `README.md` to use the `glove80-draw.png`. ➕ 2026-05-30 ✅ 2026-05-30
   - [ ] Add a GitHub workflow to use the keyboard drawer. ➕ 2026-05-11
+- [ ] Add gamming layer ➕ 2026-06-09
 
 ## 🟠 P2
 
@@ -23,6 +24,7 @@
 ## 🟡 P3
 
 - [ ] Learn how to use the RGB stuff. ➕ 2026-05-11
+- [ ] Add releases ➕ 2026-05-30 with the draw and `glove80.uf2` ➕ 2026-05-30
 - [Repository search results](https://github.com/search?q=glove-80&type=repositories)
 - [glove80-config/packages/draw.nix at main · MattSturgeon/glove80-config](https://github.com/MattSturgeon/glove80-config/blob/main/packages/draw.nix)
 - [glove80-layout/justfile at main · frozolotl/glove80-layout](https://github.com/frozolotl/glove80-layout/blob/main/justfile)
@@ -40,6 +42,7 @@
 
 ## 🗃️ Archive
 
+- [x] Add moergo layer ➕ 2026-06-09 ✅ 2026-06-09
 - [x] Fix the Windows layer problem. Currently it is not able to use the other layers ➕ 2026-05-30 ✅ 2026-05-30
 - [x] Improve the layouts adding the custom behavior. ➕ 2026-05-11 ✅ 2026-05-30
   - [x] Add copy and paste support ✅ 2026-05-11 ➕ 2026-05-11
