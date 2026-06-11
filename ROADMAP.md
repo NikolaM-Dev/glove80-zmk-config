@@ -10,7 +10,6 @@
   - [x] Add `kg-layout.yaml` to `.gitignore` ➕ 2026-05-30 ✅ 2026-05-30
   - [x] Update the `README.md` to use the `glove80-draw.png`. ➕ 2026-05-30 ✅ 2026-05-30
   - [ ] Add a GitHub workflow to use the keyboard drawer. ➕ 2026-05-11
-- [ ] Add gamming layer ➕ 2026-06-09
 
 ## 🟠 P2
 
@@ -42,6 +41,7 @@
 
 ## 🗃️ Archive
 
+- [x] Add gamming layer ➕ 2026-06-09 ✅ 2026-06-10
 - [x] Add moergo layer ➕ 2026-06-09 ✅ 2026-06-09
 - [x] Fix the Windows layer problem. Currently it is not able to use the other layers ➕ 2026-05-30 ✅ 2026-05-30
 - [x] Improve the layouts adding the custom behavior. ➕ 2026-05-11 ✅ 2026-05-30
